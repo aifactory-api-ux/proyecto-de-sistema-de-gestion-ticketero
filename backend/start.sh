@@ -20,4 +20,4 @@ echo "Starting FastAPI application..."
 exec python -m uvicorn backend.main:app \
     --host "${BACKEND_HOST:-0.0.0.0}" \
     --port "${BACKEND_PORT:-8001}" \
-    --reload "${DEBUG:-false}" == "true"
+    --reload

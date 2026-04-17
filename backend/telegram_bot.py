@@ -146,7 +146,7 @@ async def post_init(application: Application) -> None:
         logger.info(f"Webhook set to {webhook_url}/webhook")
 
 
-def start_bot() -> Application:
+async def start_bot() -> Application:
     """Start the Telegram bot.
     
     Returns:

@@ -5,6 +5,9 @@
 
 // API Configuration
 const API_BASE_URL = window.API_BASE_URL || 'http://localhost:8001';
+if (!window.API_BASE_URL) {
+    window.API_BASE_URL = API_BASE_URL;
+}
 
 // State Management
 const state = {
