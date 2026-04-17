@@ -1,0 +1,118 @@
+{
+  "project_id": "a3c618f9-039b-4a94-8276-8986ec37ddaf",
+  "project_name": "PROYECTO DE SISTEMA DE GESTION TICKETERO",
+  "goal": "Implementar el proyecto: PROYECTO DE SISTEMA DE GESTION TICKETERO\n\nVisión: El proyecto consiste en el desarrollo de un Producto Mínimo Viable (MVP) para un sistema de gestión de turnos con notificaciones vía Telegram. El objetivo principal es crear una solución simple y funcional que permita a los u",
+  "last_updated": "2026-04-17T14:34:58.827024Z",
+  "total_items": 6,
+  "completed_count": 6,
+  "status": "completed",
+  "current_item_index": 6,
+  "spec_file": "SPEC.md",
+  "plan_file": "DEVELOPMENT_PLAN.md",
+  "contract_manifest_available": true,
+  "all_files_created": [
+    "backend/shared/__init__.py",
+    "backend/shared/models.py",
+    "backend/main.py",
+    "backend/database.py",
+    "backend/telegram_bot.py",
+    "backend/api/__init__.py",
+    "backend/api/tickets.py",
+    "backend/api/telegram.py",
+    "backend/utils.py",
+    "backend/start.sh",
+    "frontend/index.html",
+    "frontend/main.js",
+    "docker-compose.yml",
+    "README.md",
+    ".dockerignore",
+    ".env.example",
+    ".gitignore",
+    "run.sh",
+    "backend/Dockerfile"
+  ],
+  "items": [
+    {
+      "item_number": 1,
+      "title": "Foundation — shared models, DB schema, config, utilities",
+      "wave": 1,
+      "files_created": [
+        "backend/shared/__init__.py",
+        "backend/shared/models.py"
+      ],
+      "completed_at": "2026-04-17T14:23:21.706641Z"
+    },
+    {
+      "item_number": 2,
+      "title": "Backend API — ticket endpoints, DB logic, notification utilities",
+      "wave": 2,
+      "files_created": [
+        "backend/main.py",
+        "backend/database.py",
+        "backend/telegram_bot.py",
+        "backend/api/__init__.py",
+        "backend/api/tickets.py",
+        "backend/api/telegram.py",
+        "backend/utils.py",
+        "backend/start.sh",
+        "frontend/index.html",
+        "frontend/main.js"
+      ],
+      "completed_at": "2026-04-17T14:29:46.417951Z"
+    },
+    {
+      "item_number": 3,
+      "title": "Frontend — static web app (HTML, JS, CSS, Bootstrap)",
+      "wave": 2,
+      "files_created": [
+        "frontend/index.html",
+        "frontend/main.js",
+        "backend/api/__init__.py",
+        "backend/api/telegram.py",
+        "backend/api/tickets.py",
+        "backend/database.py",
+        "backend/main.py",
+        "backend/start.sh",
+        "backend/telegram_bot.py",
+        "backend/utils.py"
+      ],
+      "completed_at": "2026-04-17T14:29:46.417951Z"
+    },
+    {
+      "item_number": 4,
+      "title": "Infrastructure & Deployment",
+      "wave": 3,
+      "files_created": [
+        "docker-compose.yml",
+        "README.md",
+        ".dockerignore",
+        ".env.example",
+        ".gitignore",
+        "run.sh"
+      ],
+      "completed_at": "2026-04-17T14:30:02.552634Z"
+    },
+    {
+      "item_number": 5,
+      "title": "Recovery Attempt 1/2: Fix Missing/Defective Files",
+      "wave": 1,
+      "files_created": [
+        "backend/database.py",
+        "backend/utils.py",
+        "backend/telegram_bot.py",
+        "backend/Dockerfile"
+      ],
+      "completed_at": "2026-04-17T14:33:28.960039Z"
+    },
+    {
+      "item_number": 6,
+      "title": "Recovery Attempt 2/2: Fix Missing/Defective Files",
+      "wave": 1,
+      "files_created": [
+        "backend/database.py",
+        "backend/telegram_bot.py"
+      ],
+      "completed_at": "2026-04-17T14:34:58.827024Z"
+    }
+  ]
+}

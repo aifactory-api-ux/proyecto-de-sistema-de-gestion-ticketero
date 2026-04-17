@@ -1,0 +1,159 @@
+# API_CONTRACT.md
+
+## Endpoints
+
+---
+
+### 1. Create Ticket
+
+| Property         | Value                |
+|------------------|---------------------|
+| HTTP Method      | POST                |
+| Path             | /api/tickets        |
+| Auth Required    | No                  |
+| Request Body     | `TicketCreate`      |
+| Response        | `Ticket`            |
+| Status Codes     | 200                 |
+
+#### Request Body (`TicketCreate`)
+| Field        | Type    | Required | Notes         |
+|--------------|---------|----------|--------------|
+| user_name    | string  | Yes      | max_length=100 |
+| telegram_id  | int     | No       |               |
+
+#### Response (`Ticket`)
+| Field        | Type      |
+|--------------|-----------|
+| id           | int       |
+| user_name    | string    |
+| telegram_id  | int/null  |
+| number       | int       |
+| status       | string    |
+| created_at   | string (ISO 8601) |
+| updated_at   | string (ISO 8601) |
+
+---
+
+### 2. Get All Tickets
+
+| Property         | Value                |
+|------------------|---------------------|
+| HTTP Method      | GET                 |
+| Path             | /api/tickets        |
+| Auth Required    | No                  |
+| Request Body     | None                |
+| Response         | List of `Ticket`    |
+| Status Codes     | 200                 |
+
+#### Response (Array of `Ticket`)
+| Field        | Type      |
+|--------------|-----------|
+| id           | int       |
+| user_name    | string    |
+| telegram_id  | int/null  |
+| number       | int       |
+| status       | string    |
+| created_at   | string (ISO 8601) |
+| updated_at   | string (ISO 8601) |
+
+---
+
+### 3. Get Ticket Status (by ID)
+
+| Property         | Value                |
+|------------------|---------------------|
+| HTTP Method      | GET                 |
+| Path             | /api/tickets/{ticket_id}/status |
+| Auth Required    | No                  |
+| Request Body     | None                |
+| Response         | `TicketStatusResponse` |
+| Status Codes     | 200                 |
+
+#### Response (`TicketStatusResponse`)
+| Field        | Type    |
+|--------------|---------|
+| ticket_id    | int     |
+| position     | int     |
+| status       | string  |
+| number       | int     |
+
+---
+
+### 4. Update Ticket Status
+
+| Property         | Value                |
+|------------------|---------------------|
+| HTTP Method      | PATCH               |
+| Path             | /api/tickets/{ticket_id} |
+| Auth Required    | No                  |
+| Request Body     | `{ "status": string }` |
+| Response         | `Ticket`            |
+| Status Codes     | 200                 |
+
+#### Request Body
+| Field    | Type    | Required |
+|----------|---------|----------|
+| status   | string  | Yes      |
+
+#### Response (`Ticket`)
+| Field        | Type      |
+|--------------|-----------|
+| id           | int       |
+| user_name    | string    |
+| telegram_id  | int/null  |
+| number       | int       |
+| status       | string    |
+| created_at   | string (ISO 8601) |
+| updated_at   | string (ISO 8601) |
+
+---
+
+### 5. Telegram Bot: Get Ticket Status (Webhook)
+
+| Property         | Value                |
+|------------------|---------------------|
+| HTTP Method      | POST                |
+| Path             | /api/telegram/status|
+| Auth Required    | No                  |
+| Request Body     | `TicketStatusRequest` |
+| Response         | `TicketStatusResponse` |
+| Status Codes     | 200                 |
+
+#### Request Body (`TicketStatusRequest`)
+| Field      | Type    | Required |
+|------------|---------|----------|
+| ticket_id  | int     | Yes      |
+
+#### Response (`TicketStatusResponse`)
+| Field        | Type    |
+|--------------|---------|
+| ticket_id    | int     |
+| position     | int     |
+| status       | string  |
+| number       | int     |
+
+---
+
+### 6. Telegram Bot: Notify User (Internal Use)
+
+| Property         | Value                |
+|------------------|---------------------|
+| HTTP Method      | POST                |
+| Path             | /api/telegram/notify|
+| Auth Required    | No                  |
+| Request Body     | `TelegramNotification` |
+| Response         | `{ "ok": true }`    |
+| Status Codes     | 200                 |
+
+#### Request Body (`TelegramNotification`)
+| Field        | Type    | Required |
+|--------------|---------|----------|
+| telegram_id  | int     | Yes      |
+| message      | string  | Yes      |
+
+#### Response
+| Field | Type   |
+|-------|--------|
+| ok    | bool   |
+
+---

@@ -1,0 +1,132 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f4f6fa;
+  margin: 0;
+  padding: 0;
+  color: #222;
+}
+
+header {
+  background: #2d6cdf;
+  color: #fff;
+  padding: 1.5rem 0;
+  text-align: center;
+  font-size: 2rem;
+  letter-spacing: 1px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+main {
+  max-width: 800px;
+  margin: 2rem auto;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  padding: 2rem;
+}
+
+h1, h2, h3 {
+  color: #2d6cdf;
+  margin-top: 0;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+label {
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+input[type="text"],
+input[type="email"],
+textarea,
+select {
+  padding: 0.6rem;
+  border: 1px solid #cfd8dc;
+  border-radius: 4px;
+  font-size: 1rem;
+  background: #f9fafb;
+  transition: border 0.2s;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus,
+select:focus {
+  border: 1.5px solid #2d6cdf;
+  outline: none;
+}
+
+button, input[type="submit"] {
+  background: #2d6cdf;
+  color: #fff;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button:hover, input[type="submit"]:hover {
+  background: #1b4fa0;
+}
+
+.ticket-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ticket-item {
+  background: #f7faff;
+  border: 1px solid #e3eaf5;
+  border-radius: 6px;
+  margin-bottom: 1.2rem;
+  padding: 1.2rem 1rem;
+  box-shadow: 0 1px 4px rgba(45,108,223,0.03);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.ticket-item .ticket-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2d6cdf;
+}
+
+.ticket-item .ticket-meta {
+  font-size: 0.95rem;
+  color: #666;
+}
+
+.ticket-item .ticket-status {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #fff;
+  background: #2d6cdf;
+  border-radius: 3px;
+  padding: 0.2rem 0.7rem;
+  display: inline-block;
+  margin-top: 0.2rem;
+}
+
+.ticket-item .ticket-status.closed {
+  background: #aaa;
+}
+
+@media (max-width: 600px) {
+  main {
+    padding: 1rem;
+  }
+  .ticket-item {
+    padding: 0.8rem 0.5rem;
+  }
+}
