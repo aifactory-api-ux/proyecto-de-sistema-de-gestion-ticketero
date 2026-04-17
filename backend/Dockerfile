@@ -14,7 +14,7 @@ ENV VIRTUAL_ENV=/opt/venv
 ENV PATH=/opt/venv/bin:$PATH
 
 # Install Python dependencies
-COPY backend/requirements.txt .
+COPY requirements.txt .
 RUN pip install --no-cache-dir --upgrade pip && \
     pip install --no-cache-dir -r requirements.txt
 
@@ -34,8 +34,7 @@ ENV VIRTUAL_ENV=/opt/venv
 ENV PATH=/opt/venv/bin:$PATH
 
 # Copy application code
-COPY backend/ ./backend/
-COPY --from=builder /app ./app
+COPY . .
 
 # Set ownership
 RUN chown -R appuser:appgroup /app
@@ -51,4 +50,4 @@ HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
     CMD curl -f http://localhost:8001/health || exit 1
 
 # Startup command
-CMD ["/app/backend/start.sh"]
+CMD ["/app/start.sh"]
